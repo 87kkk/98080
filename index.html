@@ -4,71 +4,92 @@
   <meta charset="UTF-8">
   <title>Музей Несбывшихся Идей</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+      color: #fff;
       font-family: 'Roboto', sans-serif;
     }
 
     .hero {
-      background: linear-gradient(135deg, #2c3e50, #4ca1af);
-      color: white;
-      padding: 60px 0;
+      background: linear-gradient(135deg, #ff0080, #7928ca);
+      padding: 70px 0;
       text-align: center;
-      margin-bottom: 40px;
-      border-radius: 0 0 20px 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
     .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
     }
 
-    .btn-dark {
-      background-color: #343a40;
+    .hero p {
+      font-size: 1.2rem;
+      color: #f0f0f0;
+    }
+
+    .btn-glow {
+      background-color: #00ffc3;
+      color: #000;
       border: none;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 50px;
+      box-shadow: 0 0 20px #00ffc3;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-glow:hover {
+      background-color: #00e6b0;
+      box-shadow: 0 0 30px #00ffc3, 0 0 10px #00ffc3 inset;
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 900px;
+      margin-top: 50px;
     }
 
     .idea-card {
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      background: linear-gradient(145deg, #1e293b, #27374d);
+      border-radius: 16px;
       padding: 25px;
-      transition: transform 0.2s;
+      box-shadow: 0 0 15px rgba(0,255,255,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .idea-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0,255,255,0.3);
     }
 
     .idea-card h5 {
-      font-weight: 700;
-      color: #212529;
+      font-size: 1.6rem;
+      color: #00ffc3;
     }
 
     .idea-card p {
-      color: #495057;
+      color: #d8f3ff;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .idea-meta {
-      font-size: 0.85em;
-      color: #adb5bd;
+      font-size: 0.85rem;
+      color: #9ab;
     }
 
-    .btn-add {
-      background-color: #198754;
-      color: white;
-      font-weight: 600;
+    hr {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 30px 0;
     }
 
-    .btn-add:hover {
-      background-color: #157347;
-    }
-
-    .container {
-      max-width: 800px;
-    }
   </style>
 </head>
 <body>
@@ -76,29 +97,33 @@
   <div class="hero">
     <div class="container">
       <h1>Музей Несбывшихся Идей</h1>
-      <p class="lead mt-3">Каждая идея — это история. Даже если она не воплотилась.</p>
-      <a href="#" class="btn btn-add mt-4 px-4 py-2">Добавить идею</a>
+      <p>Где каждая идея обретает вторую жизнь — даже если она умерла первой.</p>
+      <a href="#" class="btn btn-glow mt-4">Добавить идею</a>
     </div>
   </div>
 
-  <div class="container mb-5">
+  <div class="container">
 
-    <!-- Одна идея -->
     <div class="idea-card mb-4">
-      <h5>Социальная сеть для домашних растений</h5>
-      <p class="mb-2">Приложение, где люди выкладывают фото своих растений, обмениваются советами и дают имена цветам.</p>
-      <p><strong>Почему не получилось:</strong> не нашлось разработчика, сам не знал, с чего начать, и пошёл есть картошку.</p>
+      <h5>Музыкальные наушники, которые меняют мелодию под твое настроение</h5>
+      <p>Идея: умные наушники с ИИ, считывающим пульс и выражение лица, подбирают музыку, соответствующую эмоции.</p>
+      <p><strong>Почему не получилось:</strong> технически сложно, никто не верил, а потом потерял интерес.</p>
       <p class="idea-meta">Добавлено: 2025-04-15</p>
     </div>
 
     <div class="idea-card mb-4">
-      <h5>VR-платформа для путешествий во времени</h5>
-      <p class="mb-2">Хотел создать виртуальные реконструкции исторических эпох, чтобы учить историю по-настоящему, в 3D.</p>
-      <p><strong>Почему не получилось:</strong> слишком дорого, нужен был историк, и я переключился на другой проект.</p>
-      <p class="idea-meta">Добавлено: 2025-04-10</p>
+      <h5>Ресторан на воздушном шаре</h5>
+      <p>Полет над городом во время ужина. Каждый вечер — новый маршрут. Меню под цвет неба.</p>
+      <p><strong>Почему не получилось:</strong> законы, лицензии, и… я боюсь высоты.</p>
+      <p class="idea-meta">Добавлено: 2025-04-12</p>
     </div>
 
-    <!-- ... ещё идеи -->
+    <div class="idea-card mb-4">
+      <h5>Приложение, которое рисует твои сны</h5>
+      <p>Ты описываешь сон словами, а ИИ создает картину в реальном времени. И галерея снов других людей.</p>
+      <p><strong>Почему не получилось:</strong> не хватило знаний, но всё ещё хочу это сделать.</p>
+      <p class="idea-meta">Добавлено: 2025-04-10</p>
+    </div>
 
   </div>
 
