@@ -3,88 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <title>Музей Несбывшихся Идей</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,600&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #f4f1ec;
-      font-family: 'Crimson Text', serif;
-      color: #3a3a3a;
+      background-color: #f8f9fa;
+      font-family: 'Roboto', sans-serif;
+      color: #333;
       margin: 0;
+      padding: 0;
     }
 
     .hero {
-      background: #ece0d1;
-      padding: 70px 0;
+      background-color: #e9ecef;
+      padding: 60px 0;
       text-align: center;
-      border-bottom: 1px solid #d1c5b6;
-      box-shadow: inset 0 -10px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .hero h1 {
-      font-size: 3rem;
-      font-weight: 600;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #495057;
       margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      color: #6c5e53;
+      font-size: 1.1rem;
+      color: #6c757d;
     }
 
-    .btn-vintage {
-      background-color: #b4977b;
+    .btn-main {
+      background-color: #007bff;
       color: #fff;
       border: none;
-      padding: 10px 25px;
-      border-radius: 4px;
+      padding: 12px 30px;
       font-weight: 600;
+      border-radius: 30px;
       font-family: 'Roboto', sans-serif;
-      transition: background 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    .btn-vintage:hover {
-      background-color: #a0836a;
+    .btn-main:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
     }
 
     .container {
-      max-width: 800px;
-      margin-top: 50px;
+      max-width: 900px;
+      padding: 40px 15px;
     }
 
     .idea-card {
-      background: #fffaf4;
-      border: 1px solid #e0d6c6;
-      border-left: 6px solid #b4977b;
+      background: #ffffff;
       border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       padding: 25px;
       margin-bottom: 30px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .idea-card:hover {
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
     }
 
     .idea-card h5 {
-      font-size: 1.5rem;
-      font-style: italic;
-      margin-bottom: 10px;
-      color: #5a4b3e;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #343a40;
+      margin-bottom: 15px;
     }
 
     .idea-card p {
       font-size: 1rem;
-      margin-bottom: 0.4rem;
+      color: #6c757d;
+      margin-bottom: 15px;
     }
 
     .idea-meta {
-      font-size: 0.85rem;
-      color: #9d8d7b;
-      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #adb5bd;
     }
 
     .footer {
       text-align: center;
-      color: #a89c91;
+      padding: 40px 0;
+      background-color: #343a40;
+      color: #fff;
       font-size: 0.9rem;
-      margin: 50px 0 20px;
+    }
+
+    /* Адаптивные настройки для мобильных */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .idea-card h5 {
+        font-size: 1.4rem;
+      }
     }
 
   </style>
@@ -94,8 +118,8 @@
   <div class="hero">
     <div class="container">
       <h1>Музей Несбывшихся Идей</h1>
-      <p>Цифровая выставка забытых вдохновений и нереализованных замыслов</p>
-      <a href="#" class="btn btn-vintage mt-4">Добавить идею</a>
+      <p>Место, где собираются идеи, которые не стали реальностью, но навсегда останутся в наших сердцах.</p>
+      <a href="#" class="btn btn-main mt-4">Добавить свою идею</a>
     </div>
   </div>
 
