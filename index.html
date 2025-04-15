@@ -4,125 +4,84 @@
   <meta charset="UTF-8">
   <title>Музей Несбывшихся Идей</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Crimson+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #f8f9fa;
-      font-family: 'Roboto', sans-serif;
-      color: #333;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
     }
 
     .hero {
-      background-color: #e9ecef;
-      padding: 80px 0;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
       animation: fadeIn 2s ease-in-out;
     }
 
     .hero h1 {
       font-size: 3rem;
-      font-weight: 700;
-      color: #495057;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: #6c757d;
-    }
-
-    .btn-main {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 12px 30px;
-      font-weight: 600;
-      border-radius: 30px;
-      font-family: 'Roboto', sans-serif;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .btn-main:hover {
-      background-color: #0056b3;
-      transform: translateY(-2px);
+      text-align: center;
     }
 
     .container {
       max-width: 900px;
-      padding: 40px 15px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
     .idea-card {
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      padding: 25px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
       margin-bottom: 30px;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-      opacity: 0;
-      animation: fadeUp 1s ease-in-out forwards;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeUp 1s ease forwards;
     }
 
-    .idea-card:hover {
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-      transform: translateY(-5px);
+    .idea-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
 
-    .idea-card h5 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #343a40;
-      margin-bottom: 15px;
+    .idea-content {
+      padding: 20px;
     }
 
-    .idea-card p {
-      font-size: 1rem;
-      color: #6c757d;
-      margin-bottom: 15px;
+    .idea-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .idea-content p {
+      margin-bottom: 10px;
+      color: #555;
     }
 
     .idea-meta {
-      font-size: 0.9rem;
-      color: #adb5bd;
-    }
-
-    .idea-buttons {
-      margin-top: 20px;
-      display: flex;
-      gap: 15px;
-      justify-content: space-between;
-    }
-
-    .idea-buttons button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 30px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.2s ease, background-color 0.3s ease;
-    }
-
-    .idea-buttons button:hover {
-      background-color: #0056b3;
-      transform: translateY(-2px);
+      font-size: 0.85rem;
+      color: #999;
     }
 
     .footer {
       text-align: center;
-      padding: 40px 0;
-      background-color: #343a40;
-      color: #fff;
+      padding: 30px;
+      background: #2c3e50;
+      color: white;
       font-size: 0.9rem;
+      margin-top: 40px;
     }
 
-    /* Плавное появление карточек при прокрутке */
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -134,96 +93,53 @@
       }
     }
 
-    /* Анимация при загрузке */
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-
-    /* Адаптивные настройки для мобильных */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .container {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .idea-card h5 {
-        font-size: 1.4rem;
-      }
-    }
-
   </style>
 </head>
 <body>
 
   <div class="hero">
-    <div class="container">
-      <h1>Музей Несбывшихся Идей</h1>
-      <p>Место, где собираются идеи, которые не стали реальностью, но навсегда останутся в наших сердцах.</p>
-      <a href="#" class="btn btn-main mt-4">Добавить свою идею</a>
-    </div>
+    <h1>Музей Несбывшихся Идей</h1>
   </div>
 
   <div class="container">
-
     <div class="idea-card">
-      <h5>Кафе, где посетители пишут друг другу письма от руки</h5>
-      <p>Атмосферное место с чернилами и перьями. Можно оставить письмо незнакомцу или ответить на чьё-то.</p>
-      <p><strong>Почему не получилось:</strong> аренда была дорогой, и я испугалась, что никто не придёт.</p>
-      <p class="idea-meta">Добавлено: 2025-04-15</p>
-      <div class="idea-buttons">
-        <button onclick="likeIdea(this)">Лайк</button>
-        <button onclick="saveIdea(this)">Сохранить</button>
+      <img src="https://images.unsplash.com/photo-1523540939399-141cb53a9b41?auto=format&fit=crop&w=900&q=80" class="idea-image" alt="Кафе с письмами">
+      <div class="idea-content">
+        <h3>Кафе, где посетители пишут друг другу письма от руки</h3>
+        <p>Атмосферное место с чернилами и перьями. Можно оставить письмо незнакомцу или ответить на чьё-то.</p>
+        <p><strong>Почему не получилось:</strong> аренда была дорогой, и я испугалась, что никто не придёт.</p>
+        <p class="idea-meta">Добавлено: 2025-04-15</p>
       </div>
     </div>
 
     <div class="idea-card">
-      <h5>Приложение, которое шепчет тебе комплименты в наушник</h5>
-      <p>Каждые 30 минут ты слышишь добрые слова от ИИ, чтобы поднять самооценку и настроение.</p>
-      <p><strong>Почему не получилось:</strong> казалось глупым, но идея до сих пор греет душу.</p>
-      <p class="idea-meta">Добавлено: 2025-04-12</p>
-      <div class="idea-buttons">
-        <button onclick="likeIdea(this)">Лайк</button>
-        <button onclick="saveIdea(this)">Сохранить</button>
+      <img src="https://images.unsplash.com/photo-1590073242670-fd4e7db809ce?auto=format&fit=crop&w=900&q=80" class="idea-image" alt="Приложение-комплимент">
+      <div class="idea-content">
+        <h3>Приложение, которое шепчет тебе комплименты в наушник</h3>
+        <p>Каждые 30 минут ты слышишь добрые слова от ИИ, чтобы поднять самооценку и настроение.</p>
+        <p><strong>Почему не получилось:</strong> казалось глупым, но идея до сих пор греет душу.</p>
+        <p class="idea-meta">Добавлено: 2025-04-12</p>
       </div>
     </div>
 
     <div class="idea-card">
-      <h5>Онлайн-архив заброшенных дневников</h5>
-      <p>Анонимно загружаешь свой старый дневник. Люди читают, находят отклик, комментируют страницами.</p>
-      <p><strong>Почему не получилось:</strong> боялся за конфиденциальность. А ведь у многих они лежат в ящике зря.</p>
-      <p class="idea-meta">Добавлено: 2025-04-10</p>
-      <div class="idea-buttons">
-        <button onclick="likeIdea(this)">Лайк</button>
-        <button onclick="saveIdea(this)">Сохранить</button>
+      <img src="https://images.unsplash.com/photo-1584447122060-015ad13c1d8f?auto=format&fit=crop&w=900&q=80" class="idea-image" alt="Архив дневников">
+      <div class="idea-content">
+        <h3>Онлайн-архив заброшенных дневников</h3>
+        <p>Анонимно загружаешь свой старый дневник. Люди читают, находят отклик, комментируют страницами.</p>
+        <p><strong>Почему не получилось:</strong> боялся за конфиденциальность. А ведь у многих они лежат в ящике зря.</p>
+        <p class="idea-meta">Добавлено: 2025-04-10</p>
       </div>
     </div>
-
   </div>
 
   <div class="footer">
-    &copy; 2025 Музей Несбывшихся Идей. Каждая идея — как экспонат.
+    &copy; 2025 Музей Несбывшихся Идей. Даже несбывшееся — часть истории.
   </div>
-
-  <script>
-    function likeIdea(button) {
-      button.textContent = button.textContent === "Лайк" ? "Вы лайкнули" : "Лайк";
-      button.style.backgroundColor = button.textContent === "Вы лайкнули" ? "#28a745" : "#007bff";
-    }
-
-    function saveIdea(button) {
-      button.textContent = button.textContent === "Сохранить" ? "Сохранено" : "Сохранить";
-      button.style.backgroundColor = button.textContent === "Сохранено" ? "#ffc107" : "#007bff";
-    }
-  </script>
 
 </body>
 </html>
