@@ -5,7 +5,7 @@
   <title>Музей Несбывшихся Идей</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Crimson+Text&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #f8f9fa;
@@ -13,17 +13,19 @@
       color: #333;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
     }
 
     .hero {
       background-color: #e9ecef;
-      padding: 60px 0;
+      padding: 80px 0;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 2s ease-in-out;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
       color: #495057;
       margin-bottom: 20px;
@@ -62,6 +64,8 @@
       padding: 25px;
       margin-bottom: 30px;
       transition: box-shadow 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      animation: fadeUp 1s ease-in-out forwards;
     }
 
     .idea-card:hover {
@@ -87,12 +91,57 @@
       color: #adb5bd;
     }
 
+    .idea-buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      justify-content: space-between;
+    }
+
+    .idea-buttons button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    .idea-buttons button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
     .footer {
       text-align: center;
       padding: 40px 0;
       background-color: #343a40;
       color: #fff;
       font-size: 0.9rem;
+    }
+
+    /* Плавное появление карточек при прокрутке */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Анимация при загрузке */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
     /* Адаптивные настройки для мобильных */
@@ -130,6 +179,10 @@
       <p>Атмосферное место с чернилами и перьями. Можно оставить письмо незнакомцу или ответить на чьё-то.</p>
       <p><strong>Почему не получилось:</strong> аренда была дорогой, и я испугалась, что никто не придёт.</p>
       <p class="idea-meta">Добавлено: 2025-04-15</p>
+      <div class="idea-buttons">
+        <button onclick="likeIdea(this)">Лайк</button>
+        <button onclick="saveIdea(this)">Сохранить</button>
+      </div>
     </div>
 
     <div class="idea-card">
@@ -137,6 +190,10 @@
       <p>Каждые 30 минут ты слышишь добрые слова от ИИ, чтобы поднять самооценку и настроение.</p>
       <p><strong>Почему не получилось:</strong> казалось глупым, но идея до сих пор греет душу.</p>
       <p class="idea-meta">Добавлено: 2025-04-12</p>
+      <div class="idea-buttons">
+        <button onclick="likeIdea(this)">Лайк</button>
+        <button onclick="saveIdea(this)">Сохранить</button>
+      </div>
     </div>
 
     <div class="idea-card">
@@ -144,6 +201,10 @@
       <p>Анонимно загружаешь свой старый дневник. Люди читают, находят отклик, комментируют страницами.</p>
       <p><strong>Почему не получилось:</strong> боялся за конфиденциальность. А ведь у многих они лежат в ящике зря.</p>
       <p class="idea-meta">Добавлено: 2025-04-10</p>
+      <div class="idea-buttons">
+        <button onclick="likeIdea(this)">Лайк</button>
+        <button onclick="saveIdea(this)">Сохранить</button>
+      </div>
     </div>
 
   </div>
@@ -151,6 +212,18 @@
   <div class="footer">
     &copy; 2025 Музей Несбывшихся Идей. Каждая идея — как экспонат.
   </div>
+
+  <script>
+    function likeIdea(button) {
+      button.textContent = button.textContent === "Лайк" ? "Вы лайкнули" : "Лайк";
+      button.style.backgroundColor = button.textContent === "Вы лайкнули" ? "#28a745" : "#007bff";
+    }
+
+    function saveIdea(button) {
+      button.textContent = button.textContent === "Сохранить" ? "Сохранено" : "Сохранить";
+      button.style.backgroundColor = button.textContent === "Сохранено" ? "#ffc107" : "#007bff";
+    }
+  </script>
 
 </body>
 </html>
